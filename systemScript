@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "-----"
+echo "$(date)"
+echo "$(who)"
+echo "$(uptime --pretty)"
+echo "-----"
+
+echo "Do you want to delete the previous log file? (y/n)"
+read yorn
+i=1
+while [ $i -eq 1 ]
+do 
+	if [ "$yorn" = "y" ] || [ "$yorn" = "Y" ]
+		then echo "-----" > systemScript.log
+		i=0
+	elif [ "$yorn" = "n" ] || [ "$yorn" = "N" ]
+		then i=0
+	else i=1
+	fi
+done
+echo "$(date)" >> systemScript.log
+echo "$(who)" >> systemScript.log
+echo "$(uptime --pretty)" >> systemScript.log
+echo "-----"  >> systemScript.log

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir newDir
+touch newDir/file1 newDir/file2
+mv newDir/file1 file1
+chmod 700 newDir/file2
+echo "pwd;sudo apt update;sudo apt install yum -y" >> newDir/file2
+./newDir/file2
